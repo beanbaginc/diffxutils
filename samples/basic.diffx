@@ -1,0 +1,82 @@
+#diffx: encoding=utf-8
+#.change:
+#..preamble:
+From ac497963cf23f466751c5483c69959898cf97f1a Mon Sep 17 00:00:00 2001
+From: Christian Hammond <christian@beanbaginc.com>
+Date: Wed, 5 Nov 2014 15:38:19 -0800
+Subject: [PATCH] Fix encoding issues in marked.js with ampersands.
+
+By default, when processing text blocks in marked.js, ampersands
+wouldn't be encoded to "&amp;". This caused problems when attempting to
+write a literal "&lt;", which would end up staying as a literal "&lt;",
+turning into a "<" during render.
+
+This happened because text blocks weren't specifying that ampersands
+needed to be encoded. This simple change specifies that ampersand
+encoding is required when escaping text.
+
+Note that no XSS issues were resulting from the above flaw in marked.js.
+It was purely a visual rendering issue.
+---
+ reviewboard/static/lib/js/marked.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+#..file:
+#...meta:
+filename: old-file.txt
+op: delete
+orig revision: 0018093
+
+#..file:
+#...meta:
+filename: README
+op: modify
+file mode: 100644
+orig revision: 0018093
+new revision: cdec4f6
+
+#...diff:
+--- a/README
++++ b/README
+@@ -7,7 +7,7 @@ much less painful and time-consuming. It's generic enough to use in any
+ project, and works at companies and organizations of any size.
+
+ Information on usage and installation can be found on
+-http://www.reviewboard.org/docs/manual/dev/
++https://www.reviewboard.org/docs/manual/dev/
+
+ General information on the project is available on
+-http://www.reviewboard.org/
++https://www.reviewboard.org/
+
+#..file:
+#...meta:
+filename: logo.png
+type: binary
+op: modify
+index c5a04bf89707e4faeba10c6d1474103d85f2ec13..ea7cebe3e760e8abd3fb4b0bc3d163aec5c8386b
+
+#...diff:
+delta 729
+zcmV;~0w(?Z0r3TpB!2{RLP=Bz2nYy#2xN!=000SaNLh0L01ejw01ejxLMWSf0000P
+zbVXQnQ*UN;cVTj60C#tHE@^ISb7Ns}WiD@WXPfRk8UO$SZb?KzR5*=|lU+zt0Tjo7
+z_uhS7y|~S3%W`flT)Jvm3rfXOsF&9CA%sGVAS{p+?4_3op?^SnY0!gIBnTxv2!WE2
+zU_B&h5oRPZO;bY<4RsULt$kd25EEgB|F?5E=Xd^x!w~{k#9ZJmPy;CJPOCr%@IWI;
+znr2r~`E^gR53SCytL}I#s(c^pxfvYlLrf+Ump#QkzWkE#2UhS0Rv4Iw{}-Uu8SoVQ
+z0BSTqx>jeP<$uizYoZB&d!5rXcv^M@R9$?!=~mICDo9skuGLqiY;JGu+7@d7)a6m`
+zoHfw=HblB2bN}j3mc#0XUAX{B=RneCA?pPSyjCQ2op^Y93jk2!h|=JByfs-+5DXOz
+zjl_8N>OH}+c>wG-6ZO@n@f<jVKJ5i5S6B|K$fk0hw|@ue`#47J?Fw!=j{-0@HA2gy
+zPR^b5P*hfnm<nLYb`zY8)B9nRrhtzer;(_%L{wTL$7!S~;G_4`F!Pa&)DG5Sc|7TO
+z$N4%tOUVh6i3GB=aiK^uj3j6{f5T4q%i+`jMagFT#{y-x9A+cm(26oTF%5v2x=vh;
+zV6h!xW`8!68nCH^8e=gwgM<c+sQZ^olE8>-`xQ3T-r7Zh*NWX{Vs0u-=Am2`{!D<n
+zRb$oXGdCW_VKXBFtMPaY0Dnm%{*p%A)<Wv5FVWw&h(&N=)#sxXWwfG<RiBSVaM9nk
+zNM)%vAze5oIg`o6iL5<)kt7KKH5w+@;bJu^@KU;Mlzn+t?B>H{a*)uZmY#=mR2+A6
+z%DsP3*y)}1X+{dmYMGB@&^<8B%xnk%hs{i7sW;)uGk^X){k85dElA6pmITED00000
+LNkvXXu0mjfjX+8?
+
+delta 224
+zcmV<603ZMH1^fY!B!9z6L_t(I%VX$|WRd~m89@9Qi2oCbKSTA%FieVJo3o?G?f<i*
+z6aT+HJ(DO5QVY@pGK2w0d;tk;TsGyuMN}6UgV@9v0&)q+0I&c^qh8D`FxC&O{6D9j
+z0VjqT0@91s0IS%h|9@WkW5rkvc)2t0|N5C_V4Fdj_wJ7W|5@s$F9wDg08$UaC<cHq
+zND`OL$Sxpg05;o4nhPj0fEbK!z~?7hGT?&5VvrtiQl1#iGJAWA(SK450jUM)fn_F&
+avNHg34x=Fj^eBY@0000<MNUMnLSTY<p<wm^

@@ -1,0 +1,23 @@
+--- README	2014-12-02 01:56:15.000000000 -0800
++++ README	2015-01-28 13:55:30.000000000 -0800
+@@ -6,6 +6,8 @@
+ much less painful and time-consuming. It's generic enough to use in any
+ project, and works at companies and organizations of any size.
+ 
++Hello, world.
++
+ Information on usage and installation can be found on
+ http://www.reviewboard.org/docs/manual/dev/
+ 
+# Hello, world.
+
+More metadata here.
+
+--- README	2015-01-28 13:55:30.000000000 -0800
++++ README	2015-01-28 13:55:40.000000000 -0800
+@@ -13,3 +13,5 @@
+ 
+ General information on the project is available on
+ http://www.reviewboard.org/
++
++This is a test.

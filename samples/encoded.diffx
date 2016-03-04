@@ -1,0 +1,71 @@
+#diffx: encoding=shift-jis
+#.change:
+#..preamble:
+From ac497963cf23f466751c5483c69959898cf97f1a Mon Sep 17 00:00:00 2001
+From: Christian Hammond <christian@beanbaginc.com>
+Date: Wed, 5 Nov 2014 15:38:19 -0800
+Subject: [PATCH] Fix encoding issues in marked.js with ampersands.
+
+By default, when processing text blocks in marked.js, ampersands
+wouldn't be encoded to "&amp;". This caused problems when attempting to
+write a literal "&lt;", which would end up staying as a literal "&lt;",
+turning into a "<" during render.
+
+ハローワールド
+
+This happened because text blocks weren't specifying that ampersands
+needed to be encoded. This simple change specifies that ampersand
+encoding is required when escaping text.
+
+Note that no XSS issues were resulting from the above flaw in marked.js.
+It was purely a visual rendering issue.
+---
+ reviewboard/static/lib/js/marked.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+#..file:
+#...meta:
+filename: setup.cfg
+op: delete
+orig revision: 160e26c
+
+#...diff:
+--- a/setup.cfg
++++ /dev/null
+@@ -1,14 +0,0 @@
+-[egg_info]
+-tag_build = .dev
+-tag_svn_revision = 1
+-
+-[aliases]
+-snapshot = egg_info -Dr
+-nightly = egg_info -dR
+-alpha2 = egg_info -DRb alpha2
+-alpha1 = egg_info -DRb alpha1
+-beta2 = egg_info -DRb beta2
+-beta1 = egg_info -DRb beta1
+-rc1 = egg_info -DRb rc1
+-rc2 = egg_info -DRb rc2
+-release = egg_info -DRb ''
+
+#..file:
+#...meta:
+filename: README-ハロー
+op: modify
+file mode: 100644
+orig revision: 0018093
+new revision: cdec4f6
+
+#...diff:
+--- a/README-ハロー
++++ b/README-ハロー
+@@ -7,7 +7,7 @@ much less painful and time-consuming. It's generic enough to use in any
+ project, and works at companies and organizations of any size.
+
+ Information on usage and installation can be found on
+-http://www.reviewboard.org/docs/manual/dev/
++https://www.reviewboard.org/docs/manual/dev/
+
+ General information on the project is available on
+-http://www.reviewboard.org/
++https://www.reviewboard.org/
