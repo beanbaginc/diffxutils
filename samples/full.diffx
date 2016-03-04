@@ -66,10 +66,6 @@ type: binary
 op: modify
 
 #...diff: type=binary
-diff --git a/reviewboard/static/rb/images/favicon.png b/reviewboard/static/rb/images/favicon.ico
-index c5a04bf89707e4faeba10c6d1474103d85f2ec13..ea7cebe3e760e8abd3fb4b0bc3d163aec5c8386b
-GIT binary patch
-
 delta 729
 zcmV;~0w(?Z0r3TpB!2{RLP=Bz2nYy#2xN!=000SaNLh0L01ejw01ejxLMWSf0000P
 zbVXQnQ*UN;cVTj60C#tHE@^ISb7Ns}WiD@WXPfRk8UO$SZb?KzR5*=|lU+zt0Tjo7

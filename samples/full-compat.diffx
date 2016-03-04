@@ -82,7 +82,7 @@ file mode: 100644
 orig revision: c5a04bf89707e4faeba10c6d1474103d85f2ec13
 new revision: ea7cebe3e760e8abd3fb4b0bc3d163aec5c8386b
 
-#...diff:
+#...diff: type=binary
 diff --git a/logo.png b/logo.png
 index c5a04bf89707e4faeba10c6d1474103d85f2ec13..ea7cebe3e760e8abd3fb4b0bc3d163aec5c8386b 100644
 GIT binary patch
@@ -109,4 +109,3 @@ z6aT+HJ(DO5QVY@pGK2w0d;tk;TsGyuMN}6UgV@9v0&)q+0I&c^qh8D`FxC&O{6D9j
 z0VjqT0@91s0IS%h|9@WkW5rkvc)2t0|N5C_V4Fdj_wJ7W|5@s$F9wDg08$UaC<cHq
 zND`OL$Sxpg05;o4nhPj0fEbK!z~?7hGT?&5VvrtiQl1#iGJAWA(SK450jUM)fn_F&
 avNHg34x=Fj^eBY@0000<MNUMnLSTY<p<wm^
-
